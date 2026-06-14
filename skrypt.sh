@@ -31,9 +31,9 @@ while [[ $# -gt 0 ]]; do
     --help | -h)
       echo "Usage: $0 [OPTION]"
       echo "Options:"
-      echo "  --date          Print the current date and time."
-      echo "  --logs [N]     Create N log files in the 'logs' directory (default is 100)."
-      echo "  --help          Display this help message."
+      echo "  --date|-d          Print the current date and time."
+      echo "  --logs|-l [N]     Create N log files in the 'logs' directory (default is 100)."
+      echo "  --help|-h          Display this help message."
       exit 0
       ;;
     *)
