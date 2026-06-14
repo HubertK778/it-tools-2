@@ -6,7 +6,7 @@ while [[ $# -gt 0 ]]; do
       echo $(date +"%Y-%m-%d %H:%M:%S")
       exit 0
       ;;
-    --logs)
+    --logs | -l)
         LOG_DIR="./logs"
         
         mkdir -p "$LOG_DIR"
