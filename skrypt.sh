@@ -6,6 +6,23 @@ while [[ $# -gt 0 ]]; do
       echo $(date +"%Y-%m-%d %H:%M:%S")
       exit 0
       ;;
+    --logs)
+        LOG_DIR="./logs"
+        
+        mkdir -p "$LOG_DIR"
+        
+        for i in {1..100}; do
+            fileName="${LOG_DIR}/log${i}.txt"
+            
+            {
+                echo "File name: $(basename "$fileName")"
+                echo "Script that created the file: $0"
+                echo "Creation date: $(date +"%Y-%m-%d %H:%M:%S")"
+            } > "$fileName"
+        done
+
+        exit 0
+      ;;
     *)
       echo "Unknown option: $1"
       echo "Use --help for usage information."
