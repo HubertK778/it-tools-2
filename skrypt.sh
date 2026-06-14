@@ -28,6 +28,16 @@ while [[ $# -gt 0 ]]; do
 
         exit 0
       ;;
+    --init)
+        repoUrl="git@github.com:HubertK778/it-tools-2.git"
+        git clone "$repoUrl" "$targetDir"
+        
+        fullPath=$(realpath "$targetDir")
+        
+        export PATH="$fullPath:$PATH"
+        
+        exit 0
+      ;;
     --help | -h)
       echo "Usage: $0 [OPTION]"
       echo "Options:"
