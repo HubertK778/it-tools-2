@@ -28,7 +28,7 @@ while [[ $# -gt 0 ]]; do
 
         exit 0
       ;;
-    --help)
+    --help | -h)
       echo "Usage: $0 [OPTION]"
       echo "Options:"
       echo "  --date          Print the current date and time."
