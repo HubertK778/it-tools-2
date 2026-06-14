@@ -2,7 +2,7 @@
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --date)
+    --date | -d)
       echo $(date +"%Y-%m-%d %H:%M:%S")
       exit 0
       ;;
