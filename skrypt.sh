@@ -10,8 +10,13 @@ while [[ $# -gt 0 ]]; do
         LOG_DIR="./logs"
         
         mkdir -p "$LOG_DIR"
+        numberOfIterations=100
         
-        for i in {1..100}; do
+        
+        if [[ -n $2 && $2 -gt 0 ]]; then
+            numberOfIterations=$2
+        fi
+        for ((i=1; i<=numberOfIterations; i++)); do
             fileName="${LOG_DIR}/log${i}.txt"
             
             {
