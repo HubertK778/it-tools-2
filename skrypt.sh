@@ -28,6 +28,26 @@ while [[ $# -gt 0 ]]; do
 
         exit 0
       ;;
+    --error | -e)
+        numberOfIterations=100
+        if [[ -n $2 && $2 -gt 0 ]]; then
+            numberOfIterations=$2
+        fi
+        for ((i=1; i<=numberOfIterations; i++)); do
+            LOG_DIR="./error"
+        
+            mkdir -p "$LOG_DIR"
+            fileName="${LOG_DIR}/log${i}.txt"
+            
+            {
+                echo "File name: $(basename "$fileName")"
+                echo "Script that created the file: $0"
+                echo "Creation date: $(date +"%Y-%m-%d %H:%M:%S")"
+            } > "$fileName"
+        done
+
+        exit 0
+      ;;
     --init)
         repoUrl="git@github.com:HubertK778/it-tools-2.git"
         git clone "$repoUrl" "$targetDir"
