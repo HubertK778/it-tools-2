@@ -62,7 +62,9 @@ while [[ $# -gt 0 ]]; do
       echo "Usage: $0 [OPTION]"
       echo "Options:"
       echo "  --date          Print the current date and time."
-      echo "  --logs [N]     Create N log files in the 'logs' directory (default is 100)."
+      echo "  --logs [N]      Create N log files in the 'logs' directory (default is 100)."
+      echo "  --error [N]     Create N error log files in the 'error' directory (default is 100)."
+      echo "  --init          Initialize the repository."
       echo "  --help          Display this help message."
       exit 0
       ;;
